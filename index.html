@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ouverture de Kizeo Forms</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>Redirection en cours...</h2>
+  <p>Si l'application Kizeo Forms ne s'ouvre pas automatiquement,<br>vous allez être redirigé(e) vers le site dans quelques secondes.</p>
+
+  <script>
+    function isMobile() {
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    if (isMobile()) {
+      // Tente d’ouvrir l’app Kizeo Forms
+      window.location.href = "kizeoforms://openForm?id=12345";
+
+      // Si rien ne se passe au bout de 2 secondes, redirection vers le site
+      setTimeout(function() {
+        window.location.href = "https://www.kizeo-forms.com/fr/";
+      }, 2000);
+    } else {
+      // Sur desktop : rediriger directement vers le site
+      window.location.href = "https://www.kizeo-forms.com/fr/";
+    }
+  </script>
+</body>
+</html>
