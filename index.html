@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ouverture de Kizeo Forms</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ouverture Kizeo Forms</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 2rem;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
-  <h2>Redirection en cours...</h2>
-  <p>Si l'application Kizeo Forms ne s'ouvre pas automatiquement,<br>vous allez être redirigé(e) vers le site dans quelques secondes.</p>
+  <h1>Ouverture du formulaire Kizeo</h1>
+  <p>Veuillez patienter, vous allez être redirigé(e)...</p>
 
   <script>
-    function isMobile() {
-      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    function isMobileDevice() {
+      return /android|iphone|ipad|ipod/i.test(navigator.userAgent);
     }
 
-    if (isMobile()) {
-      // Tente d’ouvrir l’app Kizeo Forms
+    if (isMobileDevice()) {
+      // Ouverture du formulaire 1097271 dans l'app Kizeo
       window.location.href = "kizeoforms://openForm?id=1097271";
 
-      // Si rien ne se passe au bout de 2 secondes, redirection vers le site
-      setTimeout(function() {
+      // Redirection vers le site si l'app ne s'ouvre pas
+      setTimeout(function () {
         window.location.href = "https://www.kizeo-forms.com/fr/";
       }, 2000);
     } else {
-      // Sur desktop : rediriger directement vers le site
+      // Desktop : redirection immédiate vers le site
       window.location.href = "https://www.kizeo-forms.com/fr/";
     }
   </script>
